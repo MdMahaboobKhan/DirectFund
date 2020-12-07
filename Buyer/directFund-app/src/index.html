@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DirectFund Dapp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,400italic,300italic,300|Raleway:300,400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#makedonation">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#marketplace">Market Place</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  
+  <!-- Intro section -->
+    <section id="home" class="main-banner parallaxie" style="background: url('img/money1.jpeg')">
+      <div class="heading wow fadeInUp delay-03s">
+        <h1>DirectFund</h1>
+        <br>
+        <h2>Spending money for the right reasons</h2>
+        <br>
+        <h3>Thank you for choosing to help</h3>
+        <br><br>
+          <span style="text-align: center;">
+              A Dapp by Mohammed Mahaboob Khan<br>
+              PERSON # : 50318613<br>
+              EMAIL : mkhan32@buffalo.edu
+
+
+          </span>
+        
+      </div>
+    </section>
+
+
+    <!-- Donation -->  
+    <div class="donationContent" id = "makedonation" style="background-image: url('img/money3.jpeg'); background-size: cover;">
+      <div class="container wow fadeInUp delay-03s">
+        <div class="row" style="margin-top: 70px;">      
+          <div class="logo text-center" style="font-family: 'Times New Roman', Times, serif;">
+            <h2>Donate for a good cause</h2>
+            <h3>Thank you for your help!</h3>
+          </div>
+        </div>
+        
+        <div class="text-center"> <p><b>Current account: </b><span id="current_account1"></span></p>
+          
+          <div class="donate-card col-lg-6 other-user" style="display: none;" >
+            <div class="donate-container">
+              <label class="subs-title">
+                  <b>Enter donation amount:</b>
+                    <input type="text" class="bid-input form-control" id="deposit-value" placeholder="Enter amount in Ether"></input>
+                  <br/>
+              </label>
+    
+              <center style="margin-top:50px; padding-top:25px"><button type="submit" id="donate-amt" class="btn btn-primary btn-action align-center">Donate</button></center>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- Market Place -->  
+  <div class="content" id = "marketplace" style="background-image: url('img/money5.jpg'); background-size: cover;">
+    <div class="container wow fadeInUp delay-03s">
+      <div class="row" style="margin-top: 70px;">      
+        <div class="logo text-center" style="font-family: 'Times New Roman', Times, serif;">
+		      <h2>MARKET PLACE</h2>
+          <h3>Item goes to buyer with highest proposal</h3>
+        </div>
+      </div>
+      
+      <div class="text-center" > <p><b>Current account: </b><span id="current_account"></span></p>
+        <div class="row text-center" style="padding-top:20px">
+
+          <div class="col-lg-2 col-lg-offset-2 img-chairperson">
+              <img src="img/auction_item1.jpeg" class="rounded" height="400px" width="280px" style="margin-top: 50px; box-shadow: 0 8px 16px 0 black;">
+          </div>
+          
+          <div class="col-lg-6 col-lg-offset-1 other-user" style="display: none;">
+            <div class="proposal-card" >
+
+              <div class="begining-section" style="display: none;">
+                <h2 class="subs-title text-center">Sale has not been started</h2>
+                <span style="font-family: 'Lobster', cursive; font-size: 25px;" >
+                  Please wait for the state to change
+                </span>
+              </div>
+
+              <div class="proposal-section" style="display: none;">
+                <h2 class="subs-title text-center">Propose rate for this item!</h2>
+                <label class="subs-title">
+                    <b>Enter blinded proposal: </b>&nbsp;
+                      <input type="text" class="bid-input form-control" id="propose-value" placeholder="Enter in bytes"></input>
+                    <br/>
+                    <br>
+                </label>
+
+                <label class="subs-title">
+                    <b>Enter deposit amount: </b>&nbsp;
+                      <input type="text" class="bid-input form-control" id="message-value" placeholder="Enter in Ether"></input>
+                    <br/>
+                </label>
+
+                <center style="padding-top:25px"><button type="submit" id="submit-propose" class="btn btn-primary btn-action align-center">Propose</button></center>
+              </div>
+              
+
+              <div class="buying-section" style="display: none;"> 
+                <h2 class="subs-title text-center">Finalise rate for this item!</h2>
+                <label class="subs-title">
+                    <b>Reveal your bid:</b>&nbsp;
+                      <input type="text" class="bid-input form-control" id="proposal-reveal" placeholder="Enter your proposal rate"></input>
+                      &nbsp; <br><br>
+                    <b>Enter Password:</b>&nbsp;
+                      <input type="password" class="bid-input form-control" id="password" placeholder="Enter Password"></input>
+                    <br/>
+                </label>
+                <div class="row" style="padding-top:20px"> 
+                  <center><button type="submit" id="submit-buy" class="btn btn-primary btn-action align-center" >Buy</button></center>
+                  <br>
+                </div>
+              </div>
+
+              <div class="ending-section" style="display: none;">
+                <h2 class="subs-title text-center">Sale is Over</h2>
+                <span class="sale-end-message" style="font-family: 'Lobster', cursive; font-size: 20px; padding-right: 10px;">
+                  Click on Sale Details to view final sale details 
+                </span>
+              
+              </div>
+
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    
+
+      <div class="row" style="padding-top:20px">
+        <div id="info-section" class="row" style="font-size:20px; text-align:center; display:block; margin: 20px;">
+            Current phase: <span id="phase-notification-text"></span>
+        </div>
+        <center>
+          <button type="submit" id="change-phase" class="btn btn-primary btn-control align-center chairperson" style="display: none;">Move to next phase</button>
+          <button type="submit" id="get-returns" class="btn btn-primary btn-control align-center other-user" style="display: none;">Get Returns</button>
+          <button type="submit" id="finish-auction" class="btn btn-primary btn-control align-center chairperson" style="display: none;">Finish Sale</button>
+          <button type="submit" id="get-winner" class="btn btn-primary btn-control align-center">Sale Details</button>
+        </center>
+        <div id = "chairperson-res-display" style="display: none;">
+          
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- About me -->  
+  <div class="contactContent" id = "contact">
+    <div class="container wow fadeInUp delay-03s">
+      <div class="row">      
+        <div class="logo text-center" style="font-family: 'Times New Roman', Times, serif;">
+          <h2>Reachout to Mohammed</h2>
+        </div>
+      </div>
+      
+      <div class="text-center">
+
+      <div style="padding-top:50px; padding-bottom: 50px;">
+
+        <a href="https://www.linkedin.com/in/mohammed-mahaboob-khan-570615144/" class="fa fa-linkedin" target="_blank" style="font-size: xx-large;"></a>
+        <a href="https://github.com/MdMahaboobKhan" class="fa fa-github" target="_blank" style="font-size: xx-large; border: solid thin;"></a>
+        <a href="https://play.google.com/store/apps/developer?id=Mohammed+Mahaboob+Khan&hl=en_US" class="fa fa-android" style="font-size: xx-large;" target="_blank"></a>
+            
+      </div>
+      
+
+      </div>
+    </div> 
+  </div>
+  
+  <!-- Footer bar -->
+  <div class="copyrights">
+    <div class="container">
+        <div class="footer-distributed">
+            <div class="footer-left">
+                <p class="footer-links">
+                    <a class="js-scroll-trigger" href="#home" style="font-size: 15px; margin-right: 35px;">Home</a>
+                    <a class="js-scroll-trigger" href="#makedonation" style="font-size: 15px; margin-right: 35px;">Donate</a>
+                    <a class="js-scroll-trigger" href="#marketplace" style="font-size: 15px; margin-right: 35px;">Market Place</a>
+                    <a class="js-scroll-trigger" href="#contact" style="font-size: 15px; margin-right: 35px;">Contact</a>
+                </p>
+                <p class="footer-company-name" style="font-size: large; margin-right: 35px;">All Rights Reserved. &copy; 2020 <a class="js-scroll-trigger" href="#contact">Mohammed Mahaboob Khan</a>
+            </div>
+        </div>
+    </div><!-- end container -->
+
+  </div><!-- end copyrights -->
+
+  <script src="js/dist/jquery.min.js"></script>
+  <script src="js/dist/bootstrap.min.js"></script>
+  <script src="js/dist/jquery.countdown.min.js"></script>
+  <script src="js/dist/wow.js"></script>
+  <script src="js/dist/custom.js"></script>
+  <script src="js/dist/bootstrap.min.js"></script>
+  <script src="js/dist/toastr.min.js"></script>
+  <script src="js/dist/web3.min.js"></script>
+  <script src="js/dist/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
